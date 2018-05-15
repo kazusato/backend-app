@@ -9,39 +9,18 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
-@ConfigurationProperties(prefix = "azure.documentdb")
+@Configuration
 @EnableDocumentDbRepositories
 public class BackendAppConfiguration extends AbstractDocumentDbConfiguration {
 
+    @Value("${azure.documentdb.uri}")
     private String uri;
 
+    @Value("${azure.documentdb.key}")
     private String key;
 
+    @Value("${azure.documentdb.database}")
     private String dbName;
-
-    public String getUri() {
-        return uri;
-    }
-
-    public void setUri(String uri) {
-        this.uri = uri;
-    }
-
-    public String getKey() {
-        return key;
-    }
-
-    public void setKey(String key) {
-        this.key = key;
-    }
-
-    public String getDbName() {
-        return dbName;
-    }
-
-    public void setDbName(String dbName) {
-        this.dbName = dbName;
-    }
 
     @Override
     public String getDatabase() {

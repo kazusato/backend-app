@@ -20,7 +20,7 @@ public class BackendAppController {
     @GetMapping
     public List<BookInfo> getAllBookInfo() {
         final List<BookInfo> bookList = new ArrayList<>();
-        repository.findByAuthor("森鴎外").forEach(b -> bookList.add(b));
+        repository.findByAuthor("夏目漱石").forEach(b -> bookList.add(b));
 
         return bookList;
     }
