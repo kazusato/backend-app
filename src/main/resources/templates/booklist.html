@@ -6,6 +6,7 @@
 </head>
 
 <body>
+<h1>書籍一覧</h1>
 <table>
     <tr th:each="book : ${bookList}">
         <td th:text="${book.id}">0</td>
@@ -15,6 +16,21 @@
         <td th:text="${book.price}">9999</td>
     </tr>
 </table>
+
+<h2>書籍登録</h2>
+<form th:action="@{/booklist/register}" th:object="${bookListForm}" method="post">
+    <label for="id">ID: </label>
+    <input type="text" id="id" name="id" th:field="*{id}" th:errorClass="error-input"/><br/>
+    <label for="title">タイトル: </label>
+    <input type="text" id="title" name="title" th:field="*{title}" th:errorClass="error-input"/><br/>
+    <label for="author">著者: </label>
+    <input type="text" id="author" name="author" th:field="*{author}" th:errorClass="error-input"/><br/>
+    <label for="publisher">出版社: </label>
+    <input type="text" id="publisher" name="publisher" th:field="*{publisher}" th:errorClass="error-input"/><br/>
+    <label for="price">価格: </label>
+    <input type="text" id="price" name="price" th:field="*{price}" th:errorClass="error-input"/>円<br/>
+    <input type="submit" value="登録"/>
+</form>
 
 </body>
 </html>
