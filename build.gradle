@@ -30,6 +30,7 @@ ext {
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
 	compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework.boot:spring-boot-devtools')
     compile group: 'org.springframework.data', name: 'spring-data-commons', version: '1.13.12.RELEASE'
 	compile('com.microsoft.azure:azure-spring-boot')
     compile group: 'com.microsoft.azure', name: 'spring-data-documentdb', version: '0.1.5'
