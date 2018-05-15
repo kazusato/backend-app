@@ -1,5 +1,8 @@
 package kazusato.myapp.backendapp.model;
 
+import com.microsoft.azure.spring.data.documentdb.core.mapping.Document;
+
+@Document(collection = "book_info")
 public class BookInfo {
 
 
